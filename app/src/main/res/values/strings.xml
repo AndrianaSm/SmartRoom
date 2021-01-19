@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SmartRoom</string>
+    <string name="smartRoom">Έξυπνο Δωμάτιο</string>
+    <string name="light">ΦΩΣ</string>
+    <string name="temp">ΘΕΡΜΟΚΡΑΣΙΑ</string>
+    <string name="boiler">ΘΕΡΜΟΣΙΦΩΝΑΣ</string>
+    <string name="intercom">ΘΥΡΟΤΗΛΕΦΩΝΟ</string>
+    <string name="pills">ΧΑΠΙΑ</string>
+    <string name="health">ΜΕΤΡΗΣΕΙΣ</string>
+    <string name="Prompt_for_talk">Πατήστε για να μιλήσετε</string>
+</resources>
