@@ -7,5 +7,33 @@
     <string name="intercom">ΘΥΡΟΤΗΛΕΦΩΝΟ</string>
     <string name="pills">ΧΑΠΙΑ</string>
     <string name="health">ΜΕΤΡΗΣΕΙΣ</string>
-    <string name="Prompt_for_talk">Πατήστε για να μιλήσετε</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="speech_prompt">Παρακαλώ μιλήστε&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Πατήστε το μικρόφωνο για να μιλήσετε!</string>
+    <string name="back">Πίσω</string>
+    <string name="openTheLamp">Παρακαλώ πατήστε το κουμπί για να ανοίξετε το φώς</string>
+    <string name="closeTheLamp">Παρακαλώ πατήστε το κουμπί για να κλείσετε το φώς</string>
+    <string name="open">Άνοιξε</string>
+    <string name="close">Κλείσε</string>
+    <string name="promptTempt">Αυξήστε και μειώστε την θερμοκρασία με το + -</string>
+    <string name="openTheBoiler">Παρακαλώ πατήστε το κουμπί για να ανοίξετε τον θερμοσίφωνα</string>
+    <string name="openCloseRoller">Παρακαλώ πατήστε το κουμπί για να ανοίξετε τον θερμοσίφωνα</string>
+
+
+    <string name="celcium">24C</string>
+    <string name="talk">&#160;Μίλα&#160;</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="closeTheBoiler">Παρακαλώ πατήσετε το κουμπί για να κλείσετε τον θερμοσίφωνα</string>
+    <string name="rollers">Ρολά</string>
+    <string name="down">Κατέβασε</string>
+    <string name="up">Ανέβασε</string>
+    <string name="promptToChoosePerson">Παρακαλώ επιλέξτε τον χρήστη για τον οποίο θέλετε να δέιτε τις μετρήσεις του</string>
+    <string name="blood_sugar">Ζάχαρο</string>
+    <string name="blood_pressure">Πίεση</string>
+    <string name="prompt_for_measurements">Παρακαλώ επιλέξτε την μέτρηση που θέτε να δείτε</string>
+
 </resources>

@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@color/backroundColor">
+    tools:context=".activities.MainActivity"
+    android:background="@color/backgroundColor">
+
 
  <TextView
      android:id="@+id/textViewSmartRoom"
@@ -16,12 +17,12 @@
      app:layout_constraintRight_toRightOf="parent"
      app:layout_constraintBottom_toTopOf="@id/guideLineHor010"
      android:text="@string/smartRoom"
-     android:autoSizeTextType="uniform"
-     android:gravity="center_horizontal"
+     android:textSize="50sp"
+     android:gravity="center"
      android:paddingHorizontal="5dp" />
 
  <LinearLayout
-     android:id="@+id/RelativeLight"
+     android:id="@+id/lightLayout"
      android:layout_width="0dp"
      android:layout_height="0dp"
      app:layout_constraintTop_toBottomOf="@id/textViewSmartRoom"
@@ -36,7 +37,7 @@
      android:focusable="true">
 
   <ImageView
-      android:layout_marginVertical="5dp"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:src="@drawable/lamp"
@@ -49,8 +50,8 @@
       android:layout_height="wrap_content"
       android:text="@string/light"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
 
       />
@@ -72,7 +73,7 @@
      android:focusable="true" >
 
   <ImageView
-      android:layout_marginVertical="5dp"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:src="@drawable/temp"
@@ -85,8 +86,8 @@
       android:layout_height="wrap_content"
       android:text="@string/temp"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
 
       />
@@ -96,7 +97,7 @@
      android:id="@+id/buttonBoiler"
      android:layout_width="0dp"
      android:layout_height="0dp"
-     app:layout_constraintTop_toBottomOf="@id/RelativeLight"
+     app:layout_constraintTop_toBottomOf="@id/lightLayout"
      app:layout_constraintBottom_toTopOf="@id/guideLineHor055"
      app:layout_constraintLeft_toLeftOf="parent"
      app:layout_constraintRight_toLeftOf="@id/guideLineVer05"
@@ -105,7 +106,7 @@
      android:orientation="vertical">
 
   <ImageView
-      android:layout_marginVertical="5dp"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:src="@drawable/boiler"
@@ -118,8 +119,8 @@
       android:layout_height="wrap_content"
       android:text="@string/boiler"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
 
       />
@@ -137,7 +138,7 @@
      android:background="@drawable/my_button"
      android:orientation="vertical">
   <ImageView
-      android:layout_marginVertical="5dp"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:src="@drawable/intercom"
@@ -150,58 +151,58 @@
       android:layout_height="wrap_content"
       android:text="@string/intercom"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
 
       />
  </LinearLayout>
-
  <LinearLayout
-     android:id="@+id/buttonPills"
+     android:id="@+id/roller"
      android:layout_width="0dp"
      android:layout_height="0dp"
-     app:layout_constraintTop_toBottomOf="@id/guideLineHor055"
-     app:layout_constraintBottom_toTopOf="@id/buttonMic"
-     app:layout_constraintLeft_toLeftOf="parent"
-     app:layout_constraintRight_toRightOf="@id/guideLineVer05"
-     android:layout_margin="10dp"
      android:background="@drawable/my_button"
+     app:layout_constraintTop_toTopOf="@id/buttonHealth"
+     app:layout_constraintLeft_toLeftOf="parent"
+     app:layout_constraintRight_toLeftOf="@id/guideLineVer05"
+     app:layout_constraintBottom_toBottomOf="@id/buttonHealth"
      android:orientation="vertical">
+
   <ImageView
-      android:layout_marginVertical="5dp"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:src="@drawable/pills"
+      android:src="@drawable/roller_1"
       android:scaleType="fitCenter"
       android:layout_weight="4"
       />
-
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/pills"
+      android:text="@string/rollers"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
-
       />
+
+
  </LinearLayout>
 
  <LinearLayout
      android:id="@+id/buttonHealth"
      android:layout_width="0dp"
      android:layout_height="0dp"
-     android:layout_marginHorizontal="10dp"
-     app:layout_constraintBottom_toBottomOf="@+id/buttonPills"
-     app:layout_constraintLeft_toRightOf="@id/guideLineVer05"
+     android:layout_margin="10dp"
+     app:layout_constraintTop_toBottomOf="@+id/guideLineHor055"
      app:layout_constraintRight_toRightOf="parent"
-     app:layout_constraintTop_toTopOf="@id/buttonPills"
+     app:layout_constraintBottom_toTopOf="@id/buttonMic"
+     app:layout_constraintLeft_toRightOf="@id/guideLineVer05"
      android:background="@drawable/my_button"
      android:orientation="vertical">
+
   <ImageView
-      android:layout_marginVertical="5dp"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
       android:src="@drawable/health"
@@ -214,8 +215,8 @@
       android:layout_height="wrap_content"
       android:text="@string/health"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
       />
  </LinearLayout>
@@ -227,26 +228,30 @@
      app:layout_constraintBottom_toBottomOf="parent"
      app:layout_constraintLeft_toLeftOf="parent"
      app:layout_constraintRight_toRightOf="parent"
-     app:layout_constraintTop_toBottomOf="@id/buttonPills"
+     app:layout_constraintTop_toBottomOf="@id/buttonHealth"
      android:layout_margin="10dp"
      android:background="@drawable/my_button"
      android:orientation="vertical">
-  <ImageView
-      android:layout_marginVertical="5dp"
+
+  <ImageButton
+      android:id="@+id/button"
+      android:layout_margin="5dp"
       android:layout_width="match_parent"
       android:layout_height="0dp"
-      android:src="@drawable/mic"
+      android:src="@drawable/micro"
       android:scaleType="fitCenter"
       android:layout_weight="4"
+      android:backgroundTint="@color/transparent"
       />
 
   <TextView
+      android:id="@+id/promptForTalk"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/Prompt_for_talk"
+      android:text="@string/tap_on_mic"
       android:layout_weight="1"
-      android:gravity="center_horizontal"
-      android:autoSizeTextType="uniform"
+      android:gravity="center"
+      android:textSize="30sp"
       android:paddingHorizontal="5dp"
       />
  </LinearLayout>
