@@ -17,15 +17,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.BloodPressureActivity"></activity>
-        <activity android:name=".activities.TheBloodActivity" />
-        <activity android:name=".activities.RollerActivity" />
-        <activity android:name=".activities.DoorActivity" />
-        <activity android:name=".activities.BloodSugarActivity" />
-        <activity android:name=".activities.BoilerActivity" />
-        <activity android:name=".activities.TempActivity" />
-        <activity android:name=".activities.LightActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.BloodPressureActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.TheBloodActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.RollerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.DoorActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BloodSugarActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.BoilerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.TempActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.LightActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
