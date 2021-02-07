@@ -29,8 +29,12 @@ public class PersonViewHolder extends RecyclerView.ViewHolder {
         String uri = person.getImageUri();
         int resource = personImage.getResources().getIdentifier(uri,null,personImage.getContext().getPackageName());
         personImage.setImageResource(resource);
+        if(person.getId()==""){
+            name.setTextSize(25);
+        }
         name.setText(person.getName());
         card_person.setBackgroundResource(R.drawable.my_button_light);
+
     }
 
 

@@ -11,26 +11,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.smartroom.R;
-import com.example.smartroom.adapters.SugarBloodMeasurementsAdapter;
+import com.example.smartroom.adapters.PressureBloodMeasurementsAdapter;
 import com.example.smartroom.services.DataService;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SugarBloodMeasurementsFragment#newInstance} factory method to
+ * Use the {@link PressureBloodMeasurementsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SugarBloodMeasurementsFragment extends Fragment {
+public class PressureBloodMeasurementsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    public SugarBloodMeasurementsFragment() {
+    public PressureBloodMeasurementsFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +38,10 @@ public class SugarBloodMeasurementsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MeasurementsFragmnent.
+     * @return A new instance of fragment PressureBloodMeasurementsFragment.
      */
-    // TODO: Rename and change types and number of parameters
-    public static SugarBloodMeasurementsFragment newInstance(String param1, String param2) {
-        SugarBloodMeasurementsFragment fragment = new SugarBloodMeasurementsFragment();
+    public static PressureBloodMeasurementsFragment newInstance(String param1, String param2) {
+        PressureBloodMeasurementsFragment fragment = new PressureBloodMeasurementsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,19 +61,21 @@ public class SugarBloodMeasurementsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =inflater.inflate(R.layout.fragment_sugar_blood_measurements, container, false);
+        // Inflate the layout for this fragment
+        View view =inflater.inflate(R.layout.fragment_pressure_blood_measurements, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_sugar_measurement);
+        RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.recycler_pressure_measurements);
         recyclerView.setHasFixedSize(true);
 
-        SugarBloodMeasurementsAdapter sugarBloodMeasurementsAdapter = new SugarBloodMeasurementsAdapter(DataService.getOurInstance().getBloodSugarMeasurements(mParam1));
+        PressureBloodMeasurementsAdapter pressureBloodMeasurementsAdapter = new PressureBloodMeasurementsAdapter(DataService.getOurInstance().getBloodPressureMeasurements("A"));
 
         recyclerView.addItemDecoration(new HorizontalSpaceItemDecorator(10));
-        recyclerView.setAdapter(sugarBloodMeasurementsAdapter);
+        recyclerView.setAdapter(pressureBloodMeasurementsAdapter);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager =new LinearLayoutManager(getContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
+
 
         return view;
     }

@@ -10,22 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.smartroom.R;
+import com.example.smartroom.activities.BloodSugarActivity;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SugarBloodFragment#newInstance} factory method to
+ * Use the {@link BloodSugarFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SugarBloodFragment extends Fragment {
+public class BloodSugarFragment extends Fragment {
 
-    private static SugarBloodFragment sugarBloodFragment;
+    private static BloodSugarFragment bloodSugarFragment;
 
-    public static void setSugarBloodFragment(SugarBloodFragment sugarBloodFragment) {
-        SugarBloodFragment.sugarBloodFragment = sugarBloodFragment;
+    public static void setBloodSugarFragment(BloodSugarFragment bloodSugarFragment) {
+        BloodSugarFragment.bloodSugarFragment = bloodSugarFragment;
     }
 
-    public static SugarBloodFragment getSugarBloodFragment() {
-        return sugarBloodFragment;
+    public static BloodSugarFragment getBloodSugarFragment() {
+        return bloodSugarFragment;
     }
 
     // TODO: Rename parameter arguments, choose names that match
@@ -37,7 +38,7 @@ public class SugarBloodFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SugarBloodFragment() {
+    public BloodSugarFragment() {
         // Required empty public constructor
     }
 
@@ -50,8 +51,8 @@ public class SugarBloodFragment extends Fragment {
      * @return A new instance of fragment PillsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SugarBloodFragment newInstance(String param1, String param2) {
-        SugarBloodFragment fragment = new SugarBloodFragment();
+    public static BloodSugarFragment newInstance(String param1, String param2) {
+        BloodSugarFragment fragment = new BloodSugarFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -71,26 +72,32 @@ public class SugarBloodFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_blood_presure, container, false);
+        View view = inflater.inflate(R.layout.fragment_blood_sugar, container, false);
 
-        SugarBloodFragment.setSugarBloodFragment(this);
+        BloodSugarFragment.setBloodSugarFragment(this);
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
 
         PersonsFragment personsFragment ;
 
         personsFragment = PersonsFragment.newInstance("blah","blah");
-        fragmentManager.beginTransaction().add(R.id.container_top_row,personsFragment).commit();
+        fragmentManager.beginTransaction().add(R.id.container_pressure_top_row,personsFragment).commit();
 
 
-
+        if(mParam1.equals("A")||mParam1.equals("B")||mParam1.equals("C")) {
+            startFragmentSugarMeasurements(mParam1);
+            BloodSugarActivity.getBloodSugarActivity().setTheName(mParam1,"Ζάχαρο");
+        }
         return view;
     }
 
-    public void startFragmentMeasurements(String id) {
+    public void startFragmentSugarMeasurements(String id) {
         SugarBloodMeasurementsFragment sugarBloodMeasurementsFragment;
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        if (id == "") {
 
-        sugarBloodMeasurementsFragment = SugarBloodMeasurementsFragment.newInstance(id,"blah");
-        fragmentManager.beginTransaction().replace(R.id.container_bottom_row, sugarBloodMeasurementsFragment).commit();
+        } else {
+            sugarBloodMeasurementsFragment = SugarBloodMeasurementsFragment.newInstance(id, "blah");
+            fragmentManager.beginTransaction().replace(R.id.container_sugar_bottom_row, sugarBloodMeasurementsFragment).commit();
+        }
     }
 }

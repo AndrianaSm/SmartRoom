@@ -35,5 +35,14 @@
     <string name="blood_sugar">Ζάχαρο</string>
     <string name="blood_pressure">Πίεση</string>
     <string name="prompt_for_measurements">Παρακαλώ επιλέξτε την μέτρηση που θέτε να δείτε</string>
+    <string name="date">ΗΜΕΡΟΜΗΝΙΑ</string>
+    <string name="systoliki">ΣΥΣΤΟΛΙΚΗ</string>
+    <string name="time">ΩΡΑ</string>
+    <string name="diastoliki">ΔΙΑΣΤΟΛΙΚΗ</string>
+    <string name="pulse">ΠΑΛΜΟΙ</string>
+    <string name="openTheDoor">Πατήστε αυτό το κουμπί για να ανοίξετε την πόρτα</string>
+    <string name="talkText">Kρατήστε παρατεταμένα το κουμπί για να μιλήσετε</string>
+    <string name="rollerPrompt">Διαμορφώστε τα ρολά ακριβώς στο σημείο που θέλετε.</string>
+    <string name="door">Θυροτηλέφωνο</string>
 
 </resources>

@@ -1,10 +1,13 @@
 package com.example.smartroom.activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,6 +26,9 @@ public class BoilerActivity extends AppCompatActivity {
     TextView openCloseBoiler;
     TextView openCloseTextView;
     final String BOILER_MODE="BOILER_MODE";
+    public ImageView quest;
+    public String insctuctions="Για να ανάψετε/κλείσετε τον θερμοσίφωνα πατήστε το μεγάλο κουμπί στο κάτω μέρος της οθόνης";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +41,31 @@ public class BoilerActivity extends AppCompatActivity {
         redLight = findViewById(R.id.red_light);
         openCloseBoiler = findViewById(R.id.openCloseBoiler);
         openCloseTextView = findViewById(R.id.openCloseTextView);
+        quest =findViewById(R.id.questImg);
 
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        Bundle b = getIntent().getExtras();
+        boolean value = false; // or other values
+        if(b != null){
+            value = b.getBoolean("command");
+            if(value==false) {
+                updateSharedPref(false);
+                redLight.setVisibility(View.INVISIBLE);
+                openCloseBoiler.setText(R.string.openTheBoiler);
+                openCloseTextView.setText(R.string.open);
+                MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.boiler_close);
+                mediaPlayer.start(); // no need to call prepare(); create() does that for you
+            }else {
+                updateSharedPref(true);
+                redLight.setVisibility(View.VISIBLE);
+                openCloseBoiler.setText(R.string.closeTheBoiler);
+                openCloseTextView.setText(R.string.close);
+                MediaPlayer mediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.boiler_open);
+                mediaPlayer.start(); // no need to call prepare(); create() does that for you
+            }
+
+        }
+
         if(sharedPref.getBoolean(BOILER_MODE,false)){
             redLight.setVisibility(View.VISIBLE);
             openCloseBoiler.setText(R.string.closeTheBoiler);
@@ -72,6 +101,20 @@ public class BoilerActivity extends AppCompatActivity {
                 finish();
             }
         });
+        quest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View vma) {
+                alertDialog(insctuctions);
+            }
+        });
+    }
+    public void alertDialog(String insctuctions) {
+        AlertDialog.Builder dialog=new AlertDialog.Builder(this);
+        dialog.setMessage(insctuctions);
+        dialog.setTitle("Οδηγίες");
+        dialog.setPositiveButton("Κατάλαβα", new DialogInterface.OnClickListener() {public void onClick(DialogInterface dialog, int which) { }});
+        AlertDialog alertDialog=dialog.create();
+        alertDialog.show();
     }
 
     private void updateSharedPref(Boolean mode) {

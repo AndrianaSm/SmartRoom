@@ -9,8 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.smartroom.Holders.PersonViewHolder;
 import com.example.smartroom.R;
+import com.example.smartroom.activities.BloodPressureActivity;
 import com.example.smartroom.activities.BloodSugarActivity;
-import com.example.smartroom.fragments.SugarBloodFragment;
+import com.example.smartroom.fragments.BloodPressureFragment;
+import com.example.smartroom.fragments.BloodSugarFragment;
 import com.example.smartroom.model.Person;
 
 import java.util.ArrayList;
@@ -34,12 +36,18 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonViewHolder> {
     public void onBindViewHolder(@NonNull PersonViewHolder holder, int position) {
         Person person =persons.get(position);
         holder.updateUI(person);
-        final int p = position;
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SugarBloodFragment.getSugarBloodFragment().startFragmentMeasurements(person.getId());
-                BloodSugarActivity.getBloodSugarActivity().setTheName(person.getName(),"Ζάχαρο");
+                BloodSugarFragment bloodSugarFragment = BloodSugarFragment.getBloodSugarFragment();
+
+                if(bloodSugarFragment!=null&& bloodSugarFragment.isVisible()) {
+                    BloodSugarFragment.getBloodSugarFragment().startFragmentSugarMeasurements(person.getId());
+                    BloodSugarActivity.getBloodSugarActivity().setTheName(person.getId(), "Ζάχαρο");
+                }else if(BloodPressureFragment.getBloodPressureFragment()!=null){
+                    BloodPressureFragment.getBloodPressureFragment().startFragmentPressureMeasurements(person.getId());
+                    BloodPressureActivity.getBloodPressureActivity().setTheName(person.getName(),"Πίεση");
+                }
             }
         });
     }

@@ -16,13 +16,13 @@ public class SugarBloodMeasurementsViewHolder extends RecyclerView.ViewHolder {
     private TextView time;
     public  final  TextView measurement;
 
-    public CardView cardThePills;
+    public CardView cardSugarMeasurements;
     public SugarBloodMeasurementsViewHolder(@NonNull View itemView) {
         super(itemView);
         this.date = (TextView)itemView.findViewById(R.id.date);
         this.measurement = (TextView)itemView.findViewById(R.id.measurement);
         this.time = (TextView)itemView.findViewById(R.id.time);
-        this.cardThePills = (CardView)itemView.findViewById(R.id.card_measurement);
+        this.cardSugarMeasurements = (CardView)itemView.findViewById(R.id.card_sugar_measurement);
 
     }
 
@@ -30,6 +30,6 @@ public class SugarBloodMeasurementsViewHolder extends RecyclerView.ViewHolder {
         date.setText(bloodSugar.getDate());
         measurement.setText(bloodSugar.getMeasurements());
         time.setText(bloodSugar.getTime());
-        cardThePills.setBackgroundResource(R.drawable.border);
+        cardSugarMeasurements.setBackgroundResource(R.drawable.bold_border);
     }
 }

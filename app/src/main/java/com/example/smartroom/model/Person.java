@@ -7,16 +7,17 @@ public class Person {
     final String DRAWABLE ="drawable/";
     private String name;
     private int age;
-    private ArrayList<BloodSugar> measurements;
+    private ArrayList<BloodSugar> sugar_measurements;
     private String imageUri;
     private String id;
-
-    public Person(String id, String name, int age, String imageUri, ArrayList<BloodSugar> measurements) {
+    private ArrayList<BloodPressure> pressures_measurements;
+    public Person(String id, String name, int age, String imageUri, ArrayList<BloodSugar> sugar_measurements,ArrayList<BloodPressure> blood_measurements) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.imageUri = imageUri;
-        this.measurements = measurements;
+        this.sugar_measurements = sugar_measurements;
+        this.pressures_measurements = pressures_measurements;
     }
 
     public String getName() {
@@ -35,7 +36,11 @@ public class Person {
         return DRAWABLE+imageUri;
     }
 
-    public ArrayList<BloodSugar> getMeasurements() {
-        return measurements;
+    public ArrayList<BloodSugar> getSugar_measurements() {
+        return sugar_measurements;
+    }
+
+    public ArrayList<BloodPressure> getPressures_measurements() {
+        return pressures_measurements;
     }
 }

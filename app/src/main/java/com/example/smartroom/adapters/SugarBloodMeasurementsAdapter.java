@@ -15,27 +15,27 @@ import java.util.ArrayList;
 
 public class SugarBloodMeasurementsAdapter extends RecyclerView.Adapter<SugarBloodMeasurementsViewHolder> {
 
-    ArrayList<BloodSugar> thePills;
+    ArrayList<BloodSugar> sugarMeasurements;
 
-    public SugarBloodMeasurementsAdapter(ArrayList<BloodSugar> thePills) {
-        this.thePills = thePills;
+    public SugarBloodMeasurementsAdapter(ArrayList<BloodSugar> sugarMeasurements) {
+        this.sugarMeasurements = sugarMeasurements;
     }
     @NonNull
     @Override
     public SugarBloodMeasurementsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View measurementCard = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_measurements,parent,false);
-        return new SugarBloodMeasurementsViewHolder(measurementCard);
+        View sugarMeasurementCard = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_sugar_measurements,parent,false);
+        return new SugarBloodMeasurementsViewHolder(sugarMeasurementCard);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SugarBloodMeasurementsViewHolder holder, int position) {
-        BloodSugar bloodSugar = this.thePills.get(position);
+        BloodSugar bloodSugar = this.sugarMeasurements.get(position);
         holder.updateUI(bloodSugar);
     }
 
 
     @Override
     public int getItemCount() {
-        return thePills.size();
+        return sugarMeasurements.size();
     }
 }

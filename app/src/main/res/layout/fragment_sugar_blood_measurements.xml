@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.SugarBloodMeasurementsFragment">
 
-    <include layout="@layout/content_the_pills_recycler"/>
+    <include layout="@layout/content_sugar_recycler"/>
 
 
 </FrameLayout>

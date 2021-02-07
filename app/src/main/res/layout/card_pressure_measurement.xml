@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/card_pressure_measurement"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="30dp">
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/time"
+            android:text="12/1/2020"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@id/time"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@id/date"
+            app:layout_constraintRight_toLeftOf="@id/systoliki"
+            android:text="6:00"
+            android:textSize="30dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/systoliki"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toLeftOf="@+id/diastoliki"
+            app:layout_constraintLeft_toRightOf="@id/time"
+            android:text="@string/systoliki"
+            android:textSize="30dp"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/diastoliki"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toLeftOf="@+id/pulse"
+            app:layout_constraintLeft_toRightOf="@id/systoliki"
+            android:textSize="30dp"
+            android:text="@string/diastoliki"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/pulse"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/diastoliki"
+            android:textSize="30dp"
+            android:text="@string/pulse"
+            android:gravity="center"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
